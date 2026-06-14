@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolve Global | Equipe</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+        }
+
+        /* HEADER */
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .logo-area h2 {
+            color: white;
+        }
+
+        .logo-area span {
+            color: #bb86fc;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            margin-left: 25px;
+            transition: .3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #bb86fc;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero span {
+            color: #bb86fc;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #d6d6d6;
+            line-height: 1.8;
+        }
+
+        /* EQUIPE */
+
+        .team {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding: 50px 5%;
+        }
+
+        .card {
+            width: 340px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: .4s;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,.3);
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(187,134,252,.3);
+        }
+
+        .card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-content h3 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .cargo {
+            display: inline-block;
+            background: #690fd7;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .descricao {
+            color: #d6d6d6;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            background: rgba(255,255,255,0.05);
+        }
+
+        @media(max-width:900px) {
+
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                width: 95%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo-area">
+            <img src="images/foto_evolve.png" alt="">
+            <h2>Evolve <span>Global</span></h2>
+        </div>
+
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="criando.html">Aprender</a>
+            <a href="estudo.html">Estudos</a>
+        </nav>
+
+    </header>
+
+    <section class="hero">
+
+        <h1>Nossa <span>Equipe</span> de Liderança</h1>
+
+        <p>
+            A Evolve Global é formada por profissionais comprometidos com inovação,
+            tecnologia e gestão estratégica. Conheça os responsáveis por transformar
+            ideias em soluções reais.
+        </p>
+
+    </section>
+
+    <section class="team">
+
+        <div class="card">
+
+            <img src="images/joao.jpeg" alt="João Buecker">
+
+            <div class="card-content">
+
+                <h3>João Buecker</h3>
+
+                <div class="cargo">
+                    Scrum Master
+                </div>
+
+                <p class="descricao">
+                    Responsável pela organização das atividades da equipe,
+                    definição das tarefas, remoção de impedimentos e apoio
+                    contínuo ao desenvolvimento e crescimento da startup.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="images/rafael.jpeg" alt="Rafael Henrique">
+
+            <div class="card-content">
+
+                <h3>Rafael Henrique</h3>
+
+                <div class="cargo">
+                    Coordenador de Documentação
+                </div>
+
+                <p class="descricao">
+                    Responsável pela elaboração dos documentos técnicos em LaTeX,
+                    gerenciamento do Trello e acompanhamento das atividades para
+                    garantir organização e produtividade.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="card">
+
+            <img src="images/iago.jpeg" alt="Iago Saraiva">
+
+            <div class="card-content">
+
+                <h3>Iago Saraiva</h3>
+
+                <div class="cargo">
+                    Desenvolvedor Full Stack
+                </div>
+
+                <p class="descricao">
+                    Responsável pelo desenvolvimento do site e aplicativo,
+                    implementação de funcionalidades, integração com banco de dados
+                    e manutenção da plataforma.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- <section class="sobre-nos">
+        <h2>Sobre Nós e o <span>Projeto</span></h2>
+        
+        <div class="sobre-text">
+            <p>
+                Nós somos fundadores da Evolve Global, esse projeto foi criado pensando em ajudar pessoas que tem menos
+                capacidade de obter um bom aparelho para estudos, uma localização mais afastada com dificuldade de conseguir fazer
+                cusos técnicos dentre outros, que precisam de ter uma renda um pouco mais alta para serem feitos.
+                Com o site da Evolve Global, você consegue aprender a usar as linguagens básicas de marcação como 
+                HTML, CSS, JS e python, em um ambiente 100% virtual, e também gerenciar planos de estudos, com cronograma 
+                usando o estilo pomodoro, onde você estuda por um periodo de tempo e e faz uma pausa a cada periodo.
+                Tem um local com conteudos de diversos sites, referentes as máterias e você também poderá adicionar links de conteudos
+                que você pode estar consultando, tem um local para anotações, um local de tárefas onde você pode adicionar tárefas para 
+                serem feitas durante o dia, e um dashboard para acompanhar o seu progresso do que foi feito e o que falta para fazer,
+                temos um chatbot integrado com a API do gemini AI. 
+            </p>
+        </div>
+    </section> -->
+
+    <footer>
+        © 2026 Evolve_Global | Transformando ideias em inovação.
+    </footer>
+
+</body>
+
+</html>
