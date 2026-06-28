@@ -18,18 +18,21 @@
 
       <!-- menu mobile -->
       <button class="menu-btn" id="menuBtn">☰</button>
-      <button onclick="logout()" class="btn-logout">Sair</button>
+      <div class="oculto" id="LogOut">
+         <button onclick="logout()" class="btn-logout">Sair</button>
+      </div>
 
       <nav class="nav" id="navMenu">
         <ul>
-          <li><a href="#inicio">Início</a></li>
+          <!-- <li><a href="#inicio">Início</a></li> -->
           <li><a href="#pilares">Pilares</a></li>
           <li><a href="#impacto">Impacto</a></li>
           <li><a href="#contexto">Contexto</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li><a href="planos.html">Ver <br>Planos</a></li>
           <li><a href="criadores.html">Nossa <br> Equipe</a></li>
-          <li><a href="criando.html">Aprender</a></li>
-          <li><a href="estudo.html">Estudos</a></li>
+          <li><a id="LogAprender" class="oculto" href="criando.html">Aprender</a></li>
+          <li><a id="LogEstudar" class="oculto" href="estudo.html">Estudos</a></li>
           <li><a href="login.html">Login</a></li>
         </ul>
       </nav>
@@ -77,11 +80,13 @@
     </div>
   </section>
 
-  <div class="bot">
-    <a href="chat.html">
-      <i class="bi bi-robot" id="robot-chat">
-      </i>
-    </a>
+  <div class="oculto" id="LogBot">
+    <div class="bot">
+      <a href="chat.html">
+        <i class="bi bi-robot" id="robot-chat">
+        </i>
+      </a>
+    </div>
   </div>
 
   <!-- PILARES -->
@@ -235,6 +240,55 @@
     </div>
   </section>
 
+  <!-- DOAÇÃO
+<section class="section donation" id="doacao">
+  <div class="container donation-box reveal">
+    <span class="mini-tag">Faça parte da transformação</span>
+
+    <h2>Ajude a democratizar a tecnologia</h2>
+
+    <p>
+      Sua contribuição permite que jovens e adultos de comunidades
+      vulneráveis tenham acesso gratuito à programação, inteligência
+      artificial e oportunidades na economia digital.
+    </p>
+
+    <div class="donation-cards">
+      <div class="donation-card">
+        <h3>💙 R$ 20</h3>
+        <p>Ajuda a manter materiais de estudo disponíveis na plataforma.</p>
+      </div>
+
+      <div class="donation-card">
+        <h3>💚 R$ 50</h3>
+        <p>Contribui para a criação de novos conteúdos e atividades.</p>
+      </div>
+
+      <div class="donation-card">
+        <h3>🚀 R$ 100+</h3>
+        <p>Auxilia na expansão do projeto para mais comunidades e alunos.</p>
+      </div>
+    </div>
+
+    <div class="donation-buttons">
+      <a href="#" class="btn btn-primary">
+        <i class="bi bi-heart-fill"></i>
+        Fazer uma doação
+      </a>
+
+      <a href="#" class="btn btn-outline-light">
+        <i class="bi bi-qr-code"></i>
+        Doar via PIX
+      </a>
+    </div>
+
+    <p class="donation-footer">
+      Cada contribuição fortalece nossa missão de transformar tecnologia
+      em ascensão social.
+    </p>
+  </div>
+</section> -->
+
   <!-- REGISTER AND LOGIN -->
   <!-- <section class="login" id="log">
     <div class="container login-box reveal">
@@ -254,7 +308,8 @@
     <div class="container footer-content">
       <h3>Evolve<span>Global</span></h3>
       <p>© 2026 | Tecnologia com propósito, impacto com direção.</p>
-      <a href="https://www.instagram.com/evolvea_global?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">evolve_global</a>
+      <a href="https://www.instagram.com/evolvea_global?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+        target="_blank" rel="noopener noreferrer">evolve_global</a>
       <i class="bi bi-instagram"></i>
     </div>
   </footer>

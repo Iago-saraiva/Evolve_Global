@@ -50,6 +50,10 @@ body {
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
 }
 
+.oculto {
+  display: none;
+}
+
 .nav-container {
   min-height: 78px;
   display: flex;

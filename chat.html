@@ -342,7 +342,7 @@
 
     <script>
         // CHAVE API DO GMEINI AI
-        const DEFAULT_API_KEY = "AIzaSyCfd-GXQcvr7T-waJh6WOqi3jAxLMTH2Qk";
+        const DEFAULT_API_KEY = "AQ.Ab8RN6K0AP8L2-FweyRortn4WSq_PIE2O_oCxjFl_Ss3bK24sQ";
         
         
         class ChatBot {
@@ -371,7 +371,7 @@
                 let savedKey = localStorage.getItem('geminiApiKey');
                 
                 // Se não tiver chave salva, usar a chave padrão (se configurada)
-                if (!savedKey && DEFAULT_API_KEY && DEFAULT_API_KEY !== "AIzaSyCfd-GXQcvr7T-waJh6WOqi3jAxLMTH2Qk") {
+                if (!savedKey && DEFAULT_API_KEY && DEFAULT_API_KEY !== "AQ.Ab8RN6K0AP8L2-FweyRortn4WSq_PIE2O_oCxjFl_Ss3bK24sQ") {
                     savedKey = DEFAULT_API_KEY;
                     localStorage.setItem('geminiApiKey', savedKey);
                 }
@@ -385,7 +385,7 @@
                     // Testar conexão automaticamente
                     setTimeout(() => this.testConnection(), 500);
                 } else {
-                    this.apiStatus.textContent = '⚠️ Configure sua chave API ou edite o código com a chave padrão.';
+                    this.apiStatus.textContent = '⚠️ Chave de API não configurada.';
                     this.apiStatus.style.color = '#ff9800';
                 }
 
@@ -411,7 +411,7 @@
 
                 if (!message) return;
                 if (!this.apiKey) {
-                    this.addMessage("⚠️ Por favor, configure sua chave da API Gemini primeiro.\n\n🔑 Obtenha uma chave gratuita em: https://aistudio.google.com/app/apikey", 'bot');
+                    this.addMessage("⚠️ Chave de API não configurada, fale com o suporte.", 'bot');
                     return;
                 }
                 if (this.isTyping) return;
@@ -455,7 +455,7 @@
                         this.apiStatus.textContent = '❌ Chave inválida! Corrija no campo acima.';
                         this.apiStatus.style.color = '#f44336';
                     } else if (errorMsg.includes('quota')) {
-                        errorMsg = 'Limite de uso gratuito excedido. Aguarde alguns minutos ou tente uma nova chave.';
+                        errorMsg = 'Limite de uso gratuito excedido. Aguarde alguns minutos e tente novamente.';
                     }
                     
                     this.addMessage(`❌ ${errorMsg}`, 'bot');
@@ -576,7 +576,7 @@
                 }
 
                 if (!key.startsWith('AIza')) {
-                    this.apiStatus.textContent = '❌ Chave inválida! A chave Gemini deve começar com "AIza"';
+                    this.apiStatus.textContent = '❌ Chave inválida!';
                     this.apiStatus.style.color = '#f44336';
                     return;
                 }

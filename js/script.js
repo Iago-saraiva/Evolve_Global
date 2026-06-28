@@ -86,10 +86,10 @@ window.addEventListener("load", startCounters);
 const usuarioSalvo = JSON.parse(localStorage.getItem("usuario"));
 const logadoIndex = localStorage.getItem("logado");
 
-if (logadoIndex !== "true") {
-  alert("Você precisa fazer login primeiro!");
-  window.location.href = "login.html";
-}
+// if (logadoIndex !== "true") {
+//   alert("Você precisa fazer login primeiro!");
+//   window.location.href = "login.html";
+// }
 
 // ================================
 // FUNÇÃO DE LOGOUT
@@ -98,6 +98,13 @@ function logout() {
   localStorage.removeItem("logado");
   alert("Você saiu da conta.");
   window.location.href = "login.html";
+}
+
+if(localStorage.getItem("logado") === "true") {
+  document.getElementById("LogAprender").classList.remove("oculto");
+  document.getElementById("LogEstudar").classList.remove("oculto");
+  document.getElementById("LogBot").classList.remove("oculto");
+  document.getElementById("LogOut").classList.remove("oculto");
 }
 
 // Controle do bot que se move com o scroll
@@ -219,7 +226,6 @@ class MovingBot {
   }
 }
 
-// Versão alternativa mais simples - movimento suave
 function simpleMovingBot() {
   const bot = document.querySelector('.bot');
   if (!bot) return;

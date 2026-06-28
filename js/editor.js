@@ -9,6 +9,7 @@ const renameProjectBtn = document.getElementById("renameProjectBtn");
 const deleteProjectBtn = document.getElementById("deleteProjectBtn");
 
 const prevProjectBtn = document.getElementById("prevProjectBtn");
+const downloadProjectBtn = document.getElementById("downloadProjectBtn");
 const nextProjectBtn = document.getElementById("nextProjectBtn");
 const projectSelector = document.getElementById("projectSelector");
 const currentProjectBadge = document.getElementById("currentProjectBadge");
@@ -265,6 +266,35 @@ function saveCurrentProjectData(projectData) {
   localStorage.setItem("project_" + currentProjectName, JSON.stringify(projectData));
   localStorage.setItem("currentProjectName", currentProjectName);
 }
+
+async function downloadProject() {
+  saveCurrentFileContent();
+
+  const projectData = getCurrentProjectData();
+  const zip = new JSZip();
+
+  Object.entries(projectData.files).forEach(([path, content]) => {
+    zip.file(path, content);
+  });
+
+  const blob = await zip.generateAsync({
+    type: "blob"
+  });
+
+  const url = URL.createObjectURL(blob);
+
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${currentProjectName}.zip`;
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  URL.revokeObjectURL(url);
+}
+
+
 
 function ensureCurrentProjectExists() {
   const key = "project_" + currentProjectName;
@@ -991,6 +1021,7 @@ deleteProjectBtn.addEventListener("click", deleteCurrentProject);
 prevProjectBtn.addEventListener("click", goToPreviousProject);
 nextProjectBtn.addEventListener("click", goToNextProject);
 projectSelector.addEventListener("change", (e) => switchProject(e.target.value));
+downloadProjectBtn.addEventListener("click", downloadProject);
 
 createFolderBtn.addEventListener("click", createFolder);
 createFileBtn.addEventListener("click", () => createFile());

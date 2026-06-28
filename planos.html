@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos | EvolveGlobal</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(180deg, #081c15, #0f2f24);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    .header {
+      width: 100%;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, .2);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .logo span {
+      color: #00d084;
+    }
+
+    .btn-back {
+      text-decoration: none;
+      color: #fff;
+      border: 1px solid #00d084;
+      padding: 10px 20px;
+      border-radius: 12px;
+      transition: .3s;
+    }
+
+    .btn-back:hover {
+      background: #00d084;
+      color: #081c15;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+    }
+
+    .mini-tag {
+      display: inline-block;
+      background: rgba(0, 208, 132, .15);
+      color: #00d084;
+      padding: 8px 18px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      font-size: .9rem;
+      font-weight: 600;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 750px;
+      margin: auto;
+      line-height: 1.8;
+      color: #d8d8d8;
+      font-size: 1.05rem;
+    }
+
+    .plans {
+      width: 100%;
+      padding: 30px 8% 100px;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 35px;
+    }
+
+    .plan-card {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 25px;
+      padding: 40px 30px;
+      backdrop-filter: blur(15px);
+      transition: .4s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-10px);
+      border-color: #00d084;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .35);
+    }
+
+    .plan-card.popular {
+      border: 2px solid #00d084;
+      transform: scale(1.03);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: 20px;
+      right: -40px;
+      background: #00d084;
+      color: #081c15;
+      padding: 8px 45px;
+      font-weight: bold;
+      transform: rotate(45deg);
+      font-size: .8rem;
+    }
+
+    .plan-icon {
+      font-size: 3rem;
+      margin-bottom: 25px;
+    }
+
+    .plan-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .price {
+      margin-bottom: 35px;
+      display: flex;
+      align-items: end;
+      gap: 5px;
+    }
+
+    .price h2 {
+      font-size: 2.8rem;
+      color: #00d084;
+    }
+
+    .price span {
+      color: #ccc;
+      margin-bottom: 8px;
+    }
+
+    .features {
+      list-style: none;
+      margin-bottom: 35px;
+    }
+
+    .features li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 18px;
+      line-height: 1.5;
+      color: #e5e5e5;
+    }
+
+    .features i {
+      color: #00d084;
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+
+    .btn-plan {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      border-radius: 15px;
+      background: #00d084;
+      color: #081c15;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn-plan:hover {
+      transform: scale(1.03);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #cfcfcf;
+    }
+
+    .footer span {
+      color: #00d084;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .plan-card.popular {
+        transform: none;
+      }
+
+      .header {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="index.html" class="logo">
+      Evolve<span>Global</span>
+    </a>
+
+    <a href="index.html" class="btn-back">
+      <i class="bi bi-arrow-left"></i>
+      Voltar
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <span class="mini-tag">
+      Escolha sua jornada
+    </span>
+
+    <h1>
+      Evolua com a tecnologia no seu ritmo
+    </h1>
+
+    <p>
+      A EvolveGlobal acredita que o conhecimento tecnológico deve ser acessível
+      para todos. Comece gratuitamente e avance conforme seus objetivos,
+      desenvolvendo habilidades em programação e Inteligência Artificial.
+    </p>
+
+  </section>
+
+  <!-- PLANOS -->
+  <section class="plans">
+
+    <div class="plans-grid">
+
+      <!-- FREE -->
+      <div class="plan-card">
+
+        <div class="plan-icon">🌱</div>
+
+        <h2 class="plan-title">
+          FREE
+        </h2>
+
+        <div class="price">
+          <h2>R$0</h2>
+          <span>/mês</span>
+        </div>
+
+        <ul class="features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Introdução à programação
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Exercícios básicos
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Acesso à comunidade
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Plataforma mobile
+          </li>
+        </ul>
+
+        <button class="btn-plan">
+          Começar Gratuitamente
+        </button>
+
+      </div>
+
+      <!-- INICIANTE -->
+      <div class="plan-card">
+
+        <div class="plan-icon">🚀</div>
+
+        <h2 class="plan-title">
+          INICIANTE
+        </h2>
+
+        <div class="price">
+          <h2>R$19,90</h2>
+          <span>/mês</span>
+        </div>
+
+        <ul class="features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Cursos completos de lógica
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Projetos guiados
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Tutor de IA básico
+          </li>
+        </ul>
+
+        <button class="btn-plan">
+          Assinar Plano
+        </button>
+
+      </div>
+
+      <!-- INTERMEDIÁRIO -->
+      <div class="plan-card popular">
+
+        <div class="popular-badge">
+          POPULAR
+        </div>
+
+        <div class="plan-icon">💻</div>
+
+        <h2 class="plan-title">
+          INTERMEDIÁRIO
+        </h2>
+
+        <div class="price">
+          <h2>R$39,90</h2>
+          <span>/mês</span>
+        </div>
+
+        <ul class="features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Cursos avançados
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Projetos reais
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Exercícios ilimitados
+          </li>
+        </ul>
+
+        <button class="btn-plan">
+          Assinar Plano
+        </button>
+
+      </div>
+
+      <!-- AVANÇADO -->
+      <div class="plan-card">
+
+        <div class="plan-icon">👑</div>
+
+        <h2 class="plan-title">
+          AVANÇADO
+        </h2>
+
+        <div class="price">
+          <h2>R$79,90</h2>
+          <span>/mês</span>
+        </div>
+
+        <ul class="features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Trilhas profissionais
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Mentorias exclusivas
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Prioridade no suporte
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Preparação para o mercado de trabalho
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Conteúdos exclusivos
+          </li>
+        </ul>
+
+        <button class="btn-plan">
+          Assinar Plano
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 |
+    Evolve<span>Global</span> |
+    Tecnologia como Ascensão Social
+  </footer>
+
+</body>
+
+</html>

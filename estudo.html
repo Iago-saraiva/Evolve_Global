@@ -245,8 +245,8 @@
       <section class="tab-content" id="notes">
         <div class="card">
           <h2>Anotações</h2>
-          <textarea id="notesArea" placeholder="Escreva suas anotações aqui..."></textarea>
-          <button id="saveNotesBtn">Salvar Minhas Anotações</button>
+          <textarea id="notesArea" rows="10" cols="40" placeholder="Escreva suas anotações aqui..."></textarea>
+          <button id="saveNotesBtn" onclick="SalvarTxt()">Salvar Minhas Anotações</button>
         </div>
       </section>
 
@@ -553,6 +553,24 @@
     }
 
     saveNotesBtn.addEventListener("click", saveNotes);
+
+    function SalvarTxt() {
+      const notesArea = document.getElementById("notesArea").value;
+
+      const blob = new Blob([notesArea], {
+        type: "text/plain;charset=utf-8"
+      });
+
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "arquivo.txt";
+
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      URL.revokeObjectURL(link.href);
+    }
 
     // ========== GOALS ==========
     function saveGoals() {
